@@ -59,13 +59,19 @@ function renderHTML(jsonResult) {
     console.log(jsonResult)
     // const resultArray = JSON.parse(jsonResult)
     // console.log(`PARSED ARRAY`, resultArray)
-    
+
     $('.results').empty()
     for (let i = 0; i < jsonResult.data.length; i++) {
         const date = jsonResult.data[i].datetime
+        const temp = jsonResult.data[i].temp
+        const descrip = jsonResult.data[i].weather.description
+
 
         $('.results').append(`
         <div class='date' id='${date}'>${date}</div>
+        <div class='temp' id='${temp}'>${temp}</div>
+        <div class='descrip' id='${descrip}'>${descrip}</div>
+
         <br>
     `)
     }
