@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>City Weather</title>
+        <link href="main.css" rel="stylesheet" type="text/css" />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"
+        ></script>
+        <script src="index.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <body>
+        <header>
+            <h1>City Weather</h1>
+            <p>Search a city for 16 day weather forecast.</p>
+        </header>
+        <main>
 
+            <section class="left-side-map-options">
+                <iframe
+                    class="google-map"
+                    width="600"
+                    height="450"
+                    frameborder="0"
+                    style="border:0"
+                    src="https://www.google.com/maps/embed/v1/search?q=University+of+California,+Irvine&zoom=8&key=AIzaSyDnrutrppg3LubVZPkD9uo0a1Jme-l0V6E"
+                    allowfullscreen
+                ></iframe>
 
+                <div id="map-box"></div>
 
+                <form>
+                    <input
+                        type="text"
+                        id="city"
+                        class="input-field"
+                        placeholder="City (required)"
+                        required
+                    />
+                    <input
+                        type="text"
+                        id="state"
+                        class="input-field"
+                        placeholder="State or Country (2-letter code)"
+                        required
+                    />
+                    <input class="submit-btn" type="submit" value="Search" />
+                </form>
+            </section>
 
-</head>
-
-<body>
-    <h1>Weather Forecast Search</h1>
-    <p>Search a city for 16 day weather forecast.</p>
-    <iframe class='google-map' width="600" height="450" frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?q=University+of+California,+Irvine&zoom=8&key=AIzaSyDnrutrppg3LubVZPkD9uo0a1Jme-l0V6E"
-        allowfullscreen></iframe>
-
-    <div id='map-box'></div>
-    <form>
-        <input type='text' id='city' class='input-field' placeholder='City (required)' required>
-        <input type='text' id='state' class='input-field' placeholder='State or Country (2-letter code)' required>
-        <!-- <input type='text' id='country' class='input-field' placeholder='Country (2-letter code)' > -->
-        <br>
-        <br>
-        <input type="submit" value="Search">
-    </form>
-    <br>
-    <br>
-    <div class="results"></div>
-</body>
-
+            <section class="results"></section>
+        </main>
+    </body>
 </html>
