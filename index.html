@@ -9,62 +9,29 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnrutrppg3LubVZPkD9uo0a1Jme-l0V6E"
-    async></script> -->
+
 
 
 
 </head>
 
 <body>
-    <h1>School Rank Search</h1>
-    <p>Enter info.</p>
+    <h1>School Search</h1>
+    <p>Search a city for 16 day weather forecast.</p>
     <iframe class='google-map' width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/search?q=University+of+California,+Davis,+Shields+Ave,+Davis,+CA,+USA&key=AIzaSyDnrutrppg3LubVZPkD9uo0a1Jme-l0V6E" allowfullscreen></iframe>
+        src="https://www.google.com/maps/embed/v1/search?q=University+of+California,+Irvine&zoom=8&key=AIzaSyDnrutrppg3LubVZPkD9uo0a1Jme-l0V6E"
+        allowfullscreen></iframe>
 
     <div id='map-box'></div>
     <form>
-        <input type='text' id='city' class='input-field' placeholder='City'>
+        <input type='text' id='city' class='input-field' placeholder='City (required)' required>
         <input type='text' id='state' class='input-field' placeholder='State (2-letter code)' required>
-        <input type='text' id='school-name' class='input-field' placeholder='School name'>
-        <input type='text' id='level' class='input-field' placeholder='Level ("Elementary, Middle, High")'>
-        <p>Select a school level:</p>
-        <select id="level" multiple="multiple">
-            <option value="1" selected>Elementary</option>
-            <option value="2" selected>Middle</option>
-            <option value="3" selected>High</option>
-            <option value="4" selected>Alt</option>
-            <option value="5" selected>Private</option>
-        </select>
-        <p>Select a minimum school ranking:</p>
-        <select id="min-rank">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <p>Select a maximum school ranking:</p>
-        <select id="max-rank">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10" selected>10</option>
-        </select>
+        <br>
         <br>
         <input type="submit" value="Search">
     </form>
+    <br>
+    <br>
     <div class="results"></div>
 </body>
 
