@@ -78,12 +78,30 @@ function renderHTML(jsonResult) {
         const date = jsonResult.data[i].datetime
         const temp = jsonResult.data[i].temp
         const descrip = jsonResult.data[i].weather.description
+        const lowTemp = jsonResult.data[i].low_temp
+        const highTemp = jsonResult.data[i].high_temp
+        const precip = jsonResult.data[i].precip
+        const snow = jsonResult.data[i].snow
+        const windDirection = jsonResult.data[i].wind_cdir
 
         $('.results').append(`
+        <section class='weather-tile'
         <div class='date' id='${date}'>${date}</div>
-        <div class='temp' id='${temp}'>Temperature: ${temp} Celsius</div>
+        <div class='temp' id='${temp}'>Average Temperature: ${temp}°C</div>
         <div class='descrip' id='${descrip}'>${descrip}</div>
 
+        
+        <div class='hidden-details' id='hidden-details'
+
+        <div class='lowTemp' id='${lowTemp}'>Low: ${lowTemp}°C</div>
+        <div class='highTemp' id='${highTemp}'>High: ${highTemp}°C</div>
+        <div class='precip' id='${precip}'>Precipitation: ${precip} mm</div>
+        <div class='snow' id='${snow}'>Snow: ${snow} mm</div>
+        <div class='windDirection' id='${windDirection}'>Wind Direction: ${windDirection} </div>
+
+        </div>
+
+        </section>
         <br>
     `)
     }
@@ -95,17 +113,7 @@ function renderMap(address) {
     const mapUrl = `${googleMapEmbedQueryUrl}${cleanAddress}&key=${googleApiKey}`
 
     $('.google-map').attr('src', mapUrl)
-
-    // console.log('rendered map')
-    // const map = new google.maps.Map($('#map-box'), {
-    //         center: {
-    //             lat: -34.397,
-    //             lng: 150.644
-    //         },
-    //         zoom: 8
-    //     })
 }
-//// Google's code || sets map to user's location
 
 function listenSubmit() {
     $('form').submit(function(e) {
@@ -118,19 +126,16 @@ function listenSubmit() {
     })
 }
 
-// function listenSchoolNameClick() {
-//     $('.results').on('click', $('.name'), function (e) {
-//         const detailClicked = e.target.id
-//         console.log(detailClicked)
-
-//         // update static map box
-//         renderMap(detailClicked)
-//     })
-// }
+function listenSchoolNameClick() {
+    // $('.results').on('click', $('.name'), function (e) {
+    //     const targetContainer = e.target.id
+    //     console.log(targetContainer)
+    // })
+}
 
 function main() {
     listenSubmit()
-    // listenSchoolNameClick()
+    listenTileClick()
 }
 
 $(main)
