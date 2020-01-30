@@ -7,8 +7,6 @@ body {
     font-family: sans-serif;
 }
 
-
-
 header {
     display: flex;
     flex-direction: column;
@@ -18,7 +16,7 @@ header {
     align-items: stretch;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding-left: 20px
+    padding-left: 20px;
 }
 
 main {
@@ -48,7 +46,8 @@ form {
     justify-content: flex-start;
 }
 
-input, select{
+input,
+select {
     margin-top: 10px;
     box-shadow: 0px 1px 0px 0px #f0f7fa;
     border-radius: 6px;
@@ -95,4 +94,35 @@ input, select{
     align-content: stretch;
     align-items: stretch;
     padding-left: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+    }
+    .left-side-map-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+    }
+    iframe {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
 }
