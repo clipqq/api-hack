@@ -9,33 +9,27 @@ const googleMapEmbedQueryUrl = `https://www.google.com/maps/embed/v1/search?q=`
 
 //=====================================================
 
-function apiStandardRequest(city, state) {
-    const urlString = createStandardApiString(city, state)
+function apiStandardRequest(city, state, country) {
+    const urlString = createStandardApiString(city, state, country)
     makeFetchRequest(urlString)
 }
 
-function createStandardApiString(city, state) {
-    const rawInput = [city, state]
+function createStandardApiString(city, state, country) {
+    const rawInput = [city, state, country]
 
     const userInput = rawInput.filter(Boolean)
 
     let urlString = ''
-
-    // switch cases for various user inputs
-    switch (userInput.length) {
-        case 2:
-            console.log('case 2 fired')
-            urlString = `${baseWeatherUrl}${userInput[0]},${userInput[1]}`
-            break
-        case 1:
-            console.log('case 1 fired')
-            urlString = `${baseWeatherUrl}${userInput[0]}`
+    let stateString = ''
+    if(state) {
+        console.log(state)
+        stateString = `,${state}`
     }
+    urlString = `${baseWeatherUrl}${city}${stateString},${country}`
 
     urlString = `${urlString}${apiKey}`
 
     // `${searchUrl}${userInput}${apiKey}`
-    console.log(`making URL  ${urlString.trim()}`)
     return urlString.trim()
 }
 
@@ -51,6 +45,7 @@ function makeFetchRequest(urlString) {
             renderHTML(jsonResult)
         })
         .catch(function(error) {
+            alert('City, State, or Country combination not found. Please revise your search.')
             console.log('hey something broke', error)
         })
 }
@@ -66,6 +61,8 @@ function renderHTML(jsonResult) {
     const countryCode = jsonResult.country_code
 
     console.log(cityName, stateCode, countryCode)
+    renderMap(`${cityName}+${stateCode}+${countryCode}`)
+
 
     $('.results').append(`
     <div class='targetGeo' id='targetGeo'>
@@ -120,9 +117,9 @@ function listenSubmit() {
         e.preventDefault()
         const state = $('#state').val()
         const city = $('#city').val()
+        const country = $('#country').val()
 
-        renderMap(`${city}+${state}`)
-        apiStandardRequest(city, state)
+        apiStandardRequest(city, state, country)
     })
 }
 

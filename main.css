@@ -18,7 +18,7 @@ header {
     align-items: stretch;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-
+    padding-left: 20px
 }
 
 main {
@@ -48,8 +48,13 @@ form {
     justify-content: flex-start;
 }
 
-input {
+input, select{
     margin-top: 10px;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    border-radius: 6px;
+    border: 1px solid #057fd0;
+    font-weight: bold;
+    padding: 5px 5px;
 }
 
 .submit-btn {
