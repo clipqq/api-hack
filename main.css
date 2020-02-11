@@ -33,6 +33,10 @@ label {
     margin-top: 10px;
 }
 
+h6 {
+    display: none;
+}
+
 .left-side-map-options {
     display: flex;
     flex-direction: column;
