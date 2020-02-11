@@ -29,6 +29,10 @@ main {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+label {
+    margin-top: 10px;
+}
+
 .left-side-map-options {
     display: flex;
     flex-direction: column;
