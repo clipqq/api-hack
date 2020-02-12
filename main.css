@@ -1,9 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: url('https://images.pexels.com/photos/633520/pexels-photo-633520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-repeat: no-repeat;
-    background-size: auto;
+    background-color: rgba(129, 190, 248, 0.979);
     font-family: sans-serif;
 }
 
@@ -23,7 +21,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: stretch;
     align-items: stretch;
     background-color: rgba(255, 255, 255, 0.8);
@@ -101,7 +99,7 @@ select {
     justify-content: center;
     align-content: stretch;
     align-items: stretch;
-    padding-left: 20px;
+    padding-left: 60px;
 }
 
 @media only screen and (max-width: 800px) {
