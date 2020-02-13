@@ -99,6 +99,7 @@ function listenSubmit() {
         const city = $('#city').val()
         const country = $('#country').val()
         apiStandardRequest(city, state, country)
+        $('#results').addClass("results-display")
     })
 }
 

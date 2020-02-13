@@ -45,7 +45,6 @@ h6 {
     justify-content: flex-start;
     align-content: stretch;
     align-items: stretch;
-    padding-left: 20px;
 }
 
 form {
@@ -96,16 +95,21 @@ select {
 }
 
 .results {
+    display: none;
     height: 1500px;
-    display: flex;
+    width: 600px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 60px;
+    padding-left: 20px;
 }
 
 .results>* {
     padding: 5px;
+}
+
+.results-display {
+    display: flex
 }
 
 @media only screen and (max-width: 800px) {
@@ -135,6 +139,10 @@ select {
     iframe {
         display: flex;
         flex-direction: column;
+        width: auto;
+    }
+    .results {
+        height: auto;
         width: auto;
     }
 }
