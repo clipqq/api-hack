@@ -96,13 +96,16 @@ select {
 }
 
 .results {
+    height: 1500px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: stretch;
-    align-items: stretch;
     padding-left: 60px;
+}
+
+.results>* {
+    padding: 5px;
 }
 
 @media only screen and (max-width: 800px) {
